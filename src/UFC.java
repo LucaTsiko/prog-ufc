@@ -81,4 +81,21 @@ public class UFC {
        return peleadorResgistrado;
     }
 
+    /**
+     * Metodo para mostrar a todos los peleadores que hay dentro del respectivo array
+     * @return
+     */
+    public String mostrarPeleadores(){
+        StringBuilder sb = new StringBuilder("Peleadores: {");
+
+        for (int i = 0; i < NUM_MAX_PELEADORES; i++) {
+            if(peleadores[i] != null){
+                sb.append(peleadores[i].toString());
+            }
+
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+
 }
