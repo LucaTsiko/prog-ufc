@@ -62,4 +62,23 @@ public class UFC {
         }
         return posicionLibre;
     }
+
+    /**
+     * Metodo que registra a un peleador en el primer hueco libre del array
+     * @param luchador el luchador que queremos registrar
+     * @return true si el peleador ha sido registrado, false si no
+     */
+    public boolean registrarPeleador(Luchador luchador){
+        int posicion = buscarPrimerHuecoLibre();
+        boolean peleadorResgistrado = false;
+
+        if(buscarPeleador(luchador.getId()) == null){
+            if(posicion >= 0){
+                peleadores[posicion] = luchador;
+                peleadorResgistrado = true;
+            }
+        }
+       return peleadorResgistrado;
+    }
+
 }
