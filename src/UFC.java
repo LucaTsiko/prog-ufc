@@ -18,7 +18,7 @@ public class UFC {
      * @param cantidadMaxPeleadores es la cantidad maxima de peleadores
      * @return numero entero que ha dado el usuario si es > 0, si es menor 20 por defecto.
      */
-    public static int validarNumPeleadores(int cantidadMaxPeleadores) {
+    public int validarNumPeleadores(int cantidadMaxPeleadores) {
         int cantidadMaximaPeleadores = Main.pedirNumeroPeleadores(cantidadMaxPeleadores);
 
         if(cantidadMaxPeleadores < 0) {
@@ -26,5 +26,27 @@ public class UFC {
         }
 
         return cantidadMaxPeleadores;
+    }
+
+    /**
+     * Metodo que busca un peleador por su ID
+     * @param id el identificador del luchador que quiere buscar
+     * @return el luchador completo si lo encuentra, null en caso contrario
+     */
+    public Luchador buscarPeleador(int id){
+        Luchador luchador = null;
+        boolean seguirBuscando = true;
+
+        for (int i = 0; i < NUM_MAX_PELEADORES && seguirBuscando ; i++) {
+            if(peleadores[i].getId() == id){
+                luchador = peleadores[i];
+                seguirBuscando = false;
+            }
+        }
+        return luchador;
+    }
+
+    private int buscarPrimerHuecoLibre(){
+
     }
 }
