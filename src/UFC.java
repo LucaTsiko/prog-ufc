@@ -46,7 +46,20 @@ public class UFC {
         return luchador;
     }
 
+    /**
+     * Metodo que busca la primera posición libre en el Array de peleadores
+     * @return la posición libre si hay, en caso contrario -1
+     */
     private int buscarPrimerHuecoLibre(){
+        boolean seguirBuscando = true;
+        int posicionLibre = -1;
 
+        for (int i = 0; i < NUM_MAX_PELEADORES && seguirBuscando; i++) {
+            if(peleadores[i] == null){
+                posicionLibre = i;
+                seguirBuscando = false;
+            }
+        }
+        return posicionLibre;
     }
 }
