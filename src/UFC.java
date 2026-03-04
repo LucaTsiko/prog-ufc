@@ -83,7 +83,7 @@ public class UFC {
 
     /**
      * Metodo para mostrar a todos los peleadores que hay dentro del respectivo array
-     * @return
+     * @return El stringBuilder con todos los peleadores del array
      */
     public String mostrarPeleadores(){
         StringBuilder sb = new StringBuilder("Peleadores: {");
@@ -96,6 +96,20 @@ public class UFC {
         }
         sb.append("}");
         return sb.toString();
+    }
+
+    /**
+     * Metodo para contar el número de peleadores
+     * @return El numero de peleadores que hay en el array.
+     */
+    public int contarPeleadores(){
+        int contador = 0;
+        for (int i = 0; i < NUM_MAX_PELEADORES; i++) {
+            if(peleadores[i] != null){
+                contador++;
+            }
+        }
+        return contador;
     }
 
 }
